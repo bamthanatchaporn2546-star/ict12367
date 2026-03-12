@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Lab5_68106961</title>
+<h3>
+    name: thanatchaporn boonpon<br>
+    studentID: 68106961<br>
+</h3>    
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+    background:#f5f5f5;
+}
+
+h1{
+    text-align:center;
+}
+
+.box{
+    background:white;
+    padding:15px;
+    margin-bottom:15px;
+    border-radius:8px;
+}
+
+pre{
+    background:#eee;
+    padding:10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<h1>Assignment 5 - SQL</h1>
+
+<div class="box">
+<h3>1. ดึงข้อมูลทุกคอลัมน์จากตาราง city</h3>
+<pre>
+SELECT * FROM city;
+</pre>
+</div>
+
+<div class="box">
+<h3>2. แสดงรายชื่อเมือง (Name) และเขตการปกครอง (District)</h3>
+<pre>
+SELECT Name, District
+FROM city;
+</pre>
+</div>
+
+<div class="box">
+<h3>3. หาเมืองที่อยู่ในประเทศรหัส THA</h3>
+<pre>
+SELECT *
+FROM city
+WHERE CountryCode = 'THA';
+</pre>
+</div>
+
+<div class="box">
+<h3>4. หาเมืองที่มีประชากรมากกว่า 1,000,000 คน</h3>
+<pre>
+SELECT *
+FROM city
+WHERE Population > 1000000;
+</pre>
+</div>
+
+<div class="box">
+<h3>5. หาเมืองที่อยู่ในประเทศ BEL และมีประชากรมากกว่า 2,000,000</h3>
+<pre>
+SELECT *
+FROM city
+WHERE CountryCode = 'BEL'
+AND Population > 2000000;
+</pre>
+</div>
+
+<div class="box">
+<h3>6. แสดงชื่อประเทศ และทวีป</h3>
+<pre>
+SELECT Name, Continent
+FROM country;
+</pre>
+</div>
+
+<div class="box">
+<h3>7. หาประเทศที่อยู่ในทวีป Asia</h3>
+<pre>
+SELECT *
+FROM country
+WHERE Continent = 'Asia';
+</pre>
+</div>
+
+<div class="box">
+<h3>8. หาประเทศในภูมิภาค Southeast Asia และประชากรมากกว่า 50 ล้าน</h3>
+<pre>
+SELECT *
+FROM country
+WHERE Region = 'Southeast Asia'
+AND Population > 50000000;
+</pre>
+</div>
+
+<div class="box">
+<h3>9. หาประเทศที่มีอายุขัยเฉลี่ยมากกว่า 80 ปี</h3>
+<pre>
+SELECT *
+FROM country
+WHERE LifeExpectancy > 80;
+</pre>
+</div>
+
+<div class="box">
+<h3>10. หาประเทศที่ไม่มีข้อมูลปีที่ได้รับเอกราช</h3>
+<pre>
+SELECT *
+FROM country
+WHERE IndepYear IS NULL;
+</pre>
+</div>
+
+<div class="box">
+<h3>11. หาประเทศที่ GNP ปัจจุบันมากกว่า GNP เก่า</h3>
+<pre>
+SELECT *
+FROM country
+WHERE GNP > GNPOld;
+</pre>
+</div>
+
+<div class="box">
+<h3>12. แสดงภาษาทั้งหมดที่ใช้ในประเทศ USA</h3>
+<pre>
+SELECT Language
+FROM countrylanguage
+WHERE CountryCode = 'USA';
+</pre>
+</div>
+
+<div class="box">
+<h3>13. หาภาษาที่เป็นภาษาทางการ</h3>
+<pre>
+SELECT *
+FROM countrylanguage
+WHERE IsOfficial = 'T';
+</pre>
+</div>
+
+<div class="box">
+<h3>14. หาภาษาที่มีเปอร์เซ็นต์การใช้มากกว่า 50%</h3>
+<pre>
+SELECT *
+FROM countrylanguage
+WHERE Percentage > 50;
+</pre>
+</div>
+
+<div class="box">
+<h3>15. หาภาษาที่ไม่ใช่ภาษาทางการ แต่มีเปอร์เซ็นต์มากกว่า 30%</h3>
+<pre>
+SELECT *
+FROM countrylanguage
+WHERE IsOfficial = 'F'
+AND Percentage > 30;
+</pre>
+</div>
+
+</body>
+</html>
